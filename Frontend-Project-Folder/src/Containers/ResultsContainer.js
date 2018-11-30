@@ -8,7 +8,7 @@ class ResultsContainer extends Component {
     return(
       <div>
         <Filters />
-        <ListingsContainer />
+        <ListingsContainer listingData={this.props.listingData} guestsData={this.props.guestsData} citiesData={this.props.citiesData}/>
         <FavoritesContainer />
 
       </div>

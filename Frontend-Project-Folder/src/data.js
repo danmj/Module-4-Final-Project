@@ -1,6 +1,6 @@
-const homes = [
+const listings = [
   {
-    id: 0,
+    id: 1,
     type: 'private room',
     title: 'this great apt',
     description: 'great place near everything',
@@ -24,10 +24,60 @@ const homes = [
     },
     city_id: 1
   },
+  {
+    id: 2,
+    type: 'shared',
+    title: 'this great house',
+    description: 'just do it',
+    host_name: 'adam',
+    max_guests: 7,
+    price: 200,
+    rating: 4.1,
+    img_urls: {
+      1: 'url',
+      2: 'url',
+      3: 'url'
+    },
+    amenities: {
+      elevator: false,
+      pet_friendly: true,
+      kitchen: true,
+      wi_fi: true,
+      tv: true,
+      pool: true,
+      parking: true
+    },
+    city_id: 2
+  },
+  {
+    id: 3,
+    type: 'private room',
+    title: 'loft',
+    description: 'its very cool',
+    host_name: 'hannah',
+    max_guests: 2,
+    price: 250,
+    rating: 4.5,
+    img_urls: {
+      1: 'url',
+      2: 'url',
+      3: 'url'
+    },
+    amenities: {
+      elevator: true,
+      pet_friendly: false,
+      kitchen: true,
+      wi_fi: true,
+      tv: true,
+      pool: false,
+      parking: false
+    },
+    city_id: 3
+  }
 
 ]
 
-const cities = [
+export const cities = [
   {
     id: 1,
     name: 'NYC'
@@ -46,7 +96,7 @@ const cities = [
   }
 ]
 
-const guests = [
+export const guests = [
   {
     id: 1,
     name: 'Scoti'
@@ -60,3 +110,5 @@ const guests = [
     name: 'Roger'
   }
 ]
+
+export default listings

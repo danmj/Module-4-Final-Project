@@ -7,10 +7,11 @@ class BookingContainer extends Component {
     return(
       <div>
       <BookingDetails />
-        <ListingCard />
       </div>
     )
   }
 }
 
 export default BookingContainer
+
+// add in listingCard component
