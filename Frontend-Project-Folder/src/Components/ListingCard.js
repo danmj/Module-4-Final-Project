@@ -7,18 +7,21 @@ const ListingCard = (props) => {
   }
 
   const handleBooking = () => {
-    props.handleBooking()
+    props.handleBooking(props.listing)
   }
 
+
+
   return(
-    <div>
+    <div class="listing-card">
       <h3>{props.listing.title}</h3>
-      <p>{props.listing.host_name}</p>
-      <p>{props.listing.type}</p>
-      <p>{props.listing.max_guests}</p>
-      <p>{props.listing.price}</p>
-      <p>{props.listing.rating}</p>
-      <p>{props.listing.description}</p>
+      <p>Host: {props.listing.host_name}</p>
+      <p>Rating: {props.listing.rating}/5.0 ({Math.floor(Math.random() * 100 + 1)} Ratings)</p>
+      <p>Type: {props.listing.type}</p>
+      <p>Rate: ${props.listing.price}/night, Max: {props.listing.max_guests} guests</p>
+
+      <p>Description: {props.listing.description}</p>
+      <p>Amenities: </p>
       <ul>
         <li>Elevator: {props.listing.amenities.elevator ? "yes" : "no"}</li>
         <li>Pet Friendly: {props.listing.amenities.pet_friendly ? "yes" : "no"}</li>

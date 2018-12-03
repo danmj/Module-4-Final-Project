@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Filters extends Component {
   render() {
     return(
-      <div>
+      <div class="filters">
         Filters bar here
       </div>
     )

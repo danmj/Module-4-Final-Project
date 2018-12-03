@@ -5,14 +5,17 @@ class FavoritesContainer extends Component {
 
   renderFavoritesCards = () => {
     return this.props.listingData.map((listing) => {
-      return <FavoritesCard key={listing.id} listing={listing} toggleFavorite={this.props.toggleFavorite} handleBooking={this.props.handleBooking}/>
+      if (listing.favorited === true) {
+        return <FavoritesCard key={listing.id} listing={listing} toggleFavorite={this.props.toggleFavorite} handleBooking={this.props.handleBooking}/>
+      }
     })
   }
 
 
   render() {
     return(
-      <div>
+      <div class="favorites">
+        <h3>Favorites: </h3>
         {this.renderFavoritesCards()}
       </div>
     )

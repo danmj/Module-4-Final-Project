@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 const Nav = (props) => {
   return(
     <div>
-      Nav bar here
+      <h1>mockBnB</h1>
+      <h4>nav bar</h4>
+
     </div>
   )
 }

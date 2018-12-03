@@ -20,7 +20,8 @@ class PageBody extends Component {
       tripStart: "2018-11-30",
       tripEnd: "2018-12-05",
       guests: 1
-    }
+    },
+    listingToBook: {}
   }
 
   toggleFavorite = (listingObj) => {
@@ -35,8 +36,11 @@ class PageBody extends Component {
     this.setState({ listingData: updatedListings }, () => console.log(this.state.listingData))
   }
 
-  handleBooking = () => {
-
+  handleBooking = (listingObj) => {
+    this.setState({
+      listingToBook: listingObj,
+      display: "booking"
+    })
   }
 
   loggedIn = (name) => {
@@ -65,7 +69,7 @@ class PageBody extends Component {
         toggleFavorite={this.toggleFavorite}
         handleBooking={this.handleBooking}/>
       case "booking":
-        return  <BookingContainer />
+        return  <BookingContainer listing={this.state.listingToBook} searchObj={this.state.searchObject}/>
       default:
         return <Login loggedIn={this.loggedIn}/>
     }
