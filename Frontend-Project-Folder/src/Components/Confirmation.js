@@ -3,7 +3,7 @@ import React from 'react'
 const Confirmation = (props) => {
 
   return(
-    <div class="confirmation">
+    <div className="confirmation">
     <h4>You're booking is confirmed.</h4>
     <h3>Trip Details</h3>
     <p>Check-in: {props.booked.tripStart}</p>

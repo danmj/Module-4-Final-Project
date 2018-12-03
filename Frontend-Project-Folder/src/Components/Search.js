@@ -32,7 +32,7 @@ class Search extends Component {
 
   render() {
     return(
-      <div>
+      <div className="search">
         <form onSubmit={this.searchSubmitHandler}>
           <label htmlFor="city">Search by city:</label>
           <input type="text" name="city" value={this.state.city} onChange={this.cityChanger}/>

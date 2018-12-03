@@ -14,7 +14,7 @@ class ListingsContainer extends Component {
 
   render() {
     return(
-        <div class="listings">
+        <div className="listings">
           {this.renderListingCards()}
         </div>
     )

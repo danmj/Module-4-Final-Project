@@ -1,4 +1,5 @@
 import React, { Component} from 'react';
+import backgrounds from '../images/images.js'
 
 export default class Login extends Component {
 
@@ -25,10 +26,17 @@ export default class Login extends Component {
     this.props.loggedIn(this.state)
   }
 
+  // background = () => {
+  //   console.log(backgrounds);
+  //   const imageExt = backgrounds[Math.floor(Math.random()*backgrounds.length)]
+  //   console.log(imageExt);
+  //   return `./images/${imageExt}`
+  // }
+
   render() {
     return(
-      <div>
-        Login:
+      <div className="login">
+        <h1>Welcome!</h1>
         <form onSubmit={this.loginSubmitHandler}>
           <h4>First Name</h4>
           <input name="first-name" value={this.state.firstName} onChange={this.firstChangeHandler} />

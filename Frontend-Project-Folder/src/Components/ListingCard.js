@@ -15,7 +15,7 @@ const ListingCard = (props) => {
 
 
   return(
-    <div class="listing-card">
+    <div className="listing-card">
       <h3>{props.listing.name}</h3>
       <p>Host: {props.listing.owner}</p>
       <p>Rating: {props.listing.average_rating}/5.0 ({Math.floor(Math.random() * 100 + 1)} Ratings)</p>
