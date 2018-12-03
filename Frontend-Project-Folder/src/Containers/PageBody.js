@@ -3,16 +3,16 @@ import Search from '../Components/Search.js';
 import ResultsContainer from './ResultsContainer.js';
 import BookingContainer from './BookingContainer.js';
 import Login from '../Components/Login.js';
-import listings from '../data.js';
-import guests from '../data.js';
-import cities from '../data.js';
+// import listings from '../data.js';
+// import guests from '../data.js';
+// import cities from '../data.js';
 
 class PageBody extends Component {
 
   state = {
-    listingData: listings,
-    guestsData: guests,
-    citiesData: cities,
+    listingData: [],
+    guestsData: [],
+    citiesData: [],
     display: "login",
     user: "",
     searchObject: {
@@ -22,6 +22,20 @@ class PageBody extends Component {
       guests: 1
     },
     listingToBook: {}
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:3001/api/v1/listings')
+      .then(resp => resp.json())
+      .then(listingJson => {
+        const listingsWithFavorited = listingJson.map(listing => {
+          return {...listing, favorited: false}
+        })
+
+        this.setState({
+          listingData: listingsWithFavorited
+        })
+      })
   }
 
   toggleFavorite = (listingObj) => {
@@ -67,7 +81,8 @@ class PageBody extends Component {
         return  <ResultsContainer listingData={this.state.listingData} guestsData={this.state.guestsData} citiesData={this.state.citiesData}
         searchObject={this.state.searchObject}
         toggleFavorite={this.toggleFavorite}
-        handleBooking={this.handleBooking}/>
+        handleBooking={this.handleBooking}
+        searchObj={this.state.searchObject}/>
       case "booking":
         return  <BookingContainer listing={this.state.listingToBook} searchObj={this.state.searchObject}/>
       default:
