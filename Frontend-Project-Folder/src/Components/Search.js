@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 class Search extends Component {
 
   state = {
-    city: "",
-    tripStart: "2018-11-30",
-    tripEnd: "2018-12-05",
-    guests: 0
+    city: "New York",
+    tripStart: "2018-12-05",
+    tripEnd: "2018-12-14",
+    guests: 1
   }
 
   startChanger = (e) => {
@@ -35,7 +35,7 @@ class Search extends Component {
       <div>
         <form onSubmit={this.searchSubmitHandler}>
           <label htmlFor="city">Search by city:</label>
-          <input type="text" name="city" onChange={this.cityChanger}/>
+          <input type="text" name="city" value={this.state.city} onChange={this.cityChanger}/>
 
           <label htmlFor="start">Trip start date:</label>
           <input type="date"

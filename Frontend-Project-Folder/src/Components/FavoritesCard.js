@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const FavoritesCard = (props) => {
 
@@ -13,7 +13,7 @@ const FavoritesCard = (props) => {
   return(
     <div class="favorite-card">
     <h3>{props.listing.name}</h3>
-    <p>Rating: {props.listing.average_rating}/5.0 ({Math.floor(Math.random() * 100 + 1)} Ratings)</p>
+    <p>Rating: {props.listing.average_rating}/5.0</p>
     <p>Rate: ${props.listing.price}/night, Max: {props.listing.max_occupants} guests</p>
     <p>Description: {props.listing.description}</p>
 

@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ListingCard = (props) => {
+  const display = props.display
 
   const handleFavorites = () => {
     props.toggleFavorite(props.listing)
@@ -9,6 +10,7 @@ const ListingCard = (props) => {
   const handleBooking = () => {
     props.handleBooking(props.listing)
   }
+  console.log('listingcard props  ', props);
 
 
 
@@ -30,8 +32,10 @@ const ListingCard = (props) => {
         <li>Pool: {props.listing.ammenities.pool ? "yes" : "no"}</li>
         <li>Parking: {props.listing.ammenities.parking ? "yes" : "no"}</li>
       </ul>
-      <button onClick={handleFavorites}>{props.listing.favorited ? "Remove" : "Favorite"}</button>
-      <button onClick={handleBooking}>Book This Place</button>
+      <div hidden={display === "booking"? true: false }>
+        <button onClick={handleFavorites}>{props.listing.favorited ? "Remove" : "Favorite"}</button>
+        <button onClick={handleBooking}>Book This Place</button>
+      </div>
     </div>
   )
 }
