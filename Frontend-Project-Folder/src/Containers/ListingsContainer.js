@@ -6,8 +6,8 @@ class ListingsContainer extends Component {
   renderListingCards = () => {
 
     return this.props.listingData.map((listing) => {
-    
-      return <ListingCard key={listing.id} listing={listing}/>
+
+      return <ListingCard key={listing.id} listing={listing} toggleFavorite={this.props.toggleFavorite} handleBooking={this.props.handleBooking}/>
     })
   }
 

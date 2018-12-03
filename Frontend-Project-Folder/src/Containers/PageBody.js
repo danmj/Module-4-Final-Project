@@ -23,6 +23,22 @@ class PageBody extends Component {
     }
   }
 
+  toggleFavorite = (listingObj) => {
+    const updatedListings = this.state.listingData.map((listing) => {
+      if (listing.id === listingObj.id) {
+        return {...listing, favorited: !listing.favorited}
+      }
+      else {
+        return listing
+      }
+    })
+    this.setState({ listingData: updatedListings }, () => console.log(this.state.listingData))
+  }
+
+  handleBooking = () => {
+
+  }
+
   loggedIn = (name) => {
     this.setState({
       user: name,
@@ -45,7 +61,9 @@ class PageBody extends Component {
         return <Search searchListings={this.searchListings} />
       case "results":
         return  <ResultsContainer listingData={this.state.listingData} guestsData={this.state.guestsData} citiesData={this.state.citiesData}
-        searchObject={this.state.searchObject}/>
+        searchObject={this.state.searchObject}
+        toggleFavorite={this.toggleFavorite}
+        handleBooking={this.handleBooking}/>
       case "booking":
         return  <BookingContainer />
       default:

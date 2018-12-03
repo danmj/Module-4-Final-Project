@@ -22,7 +22,8 @@ const listings = [
       pool: true,
       parking: true
     },
-    city_id: 1
+    city_id: 1,
+    favorited: false
   },
   {
     id: 2,
@@ -47,7 +48,8 @@ const listings = [
       pool: true,
       parking: true
     },
-    city_id: 2
+    city_id: 2,
+    favorited: false
   },
   {
     id: 3,
@@ -72,9 +74,9 @@ const listings = [
       pool: false,
       parking: false
     },
-    city_id: 3
+    city_id: 3,
+    favorited: false
   }
-
 ]
 
 export const cities = [

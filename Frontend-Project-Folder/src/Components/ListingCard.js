@@ -2,6 +2,14 @@ import React from 'react'
 
 const ListingCard = (props) => {
 
+  const handleFavorites = () => {
+    props.toggleFavorite(props.listing)
+  }
+
+  const handleBooking = () => {
+    props.handleBooking()
+  }
+
   return(
     <div>
       <h3>{props.listing.title}</h3>
@@ -20,6 +28,8 @@ const ListingCard = (props) => {
         <li>Pool: {props.listing.amenities.pool ? "yes" : "no"}</li>
         <li>Parking: {props.listing.amenities.parking ? "yes" : "no"}</li>
       </ul>
+      <button onClick={handleFavorites}>{props.listing.favorited ? "Remove" : "Favorite"}</button>
+      <button onClick={handleBooking}>Book This Place</button>
     </div>
   )
 }
