@@ -28,6 +28,7 @@ class PageBody extends Component {
 
   componentDidMount() {
     this.fetchListings()
+    document.body.style.backgroundColor = '#fff'
   }
 
   fetchListings = () => {
@@ -139,8 +140,8 @@ class PageBody extends Component {
         searchObj={this.state.searchObject}
         display={this.state.display}/>
       case "confirmation":
-        return  <Confirmation listing={this.state.listingToBook}
-        booked={this.state.booked} searchObj={this.state.searchObject}/>
+        return  <div className="confirmation-bg"><Confirmation listing={this.state.listingToBook}
+        booked={this.state.booked} searchObj={this.state.searchObject}/> </div>
       default:
         return <Login loggedIn={this.loggedIn}/>
     }

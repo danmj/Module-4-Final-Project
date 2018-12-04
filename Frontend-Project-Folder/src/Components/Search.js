@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import '../stylesheets/Search.css';
 
 class Search extends Component {
 
@@ -93,27 +94,29 @@ class Search extends Component {
   render() {
     return(
       <div className="search">
+      <h1>Search Listings</h1>
         <form onSubmit={this.searchSubmitHandler}>
-          <label htmlFor="city">Search by city:</label>
-          <input type="text" name="city" value={this.state.city} onChange={this.cityChanger}/>
+          <h4><label htmlFor="city">Search by city:  </label>
+          <input type="text" name="city" value={this.state.city} onChange={this.cityChanger}/></h4>
 
-          <label htmlFor="start">Trip start date:</label>
+          <h4><label htmlFor="start">Trip start date:  </label>
           <input type="date"
           id="start"
           name="trip-start"
           min="2018-01-01"
           max="2018-12-31"
-          onChange={this.startChanger} />
+          onChange={this.startChanger} /></h4>
 
-          <label htmlFor="end">Trip end date:</label>
+
+          <h4><label htmlFor="end">Trip end date:  </label>
           <input type="date"
           id="end"
           name="trip-end"
           min="2018-01-01"
           max="2018-12-31"
-          onChange={this.endChanger}/>
+          onChange={this.endChanger}/></h4>
 
-          <label htmlFor="guests_dropdown">Number of Guests:</label>
+          <h4><label htmlFor="guests_dropdown">Number of Guests:  </label>
           <select name="guests" value={this.state.guests} onChange={this.guestChanger}>
             <option value={null}>0</option>
             <option value="1">1</option>
