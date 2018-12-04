@@ -27,13 +27,11 @@ body {
   background-attachment: fixed;
 }
 .results-bg {
-  background-image:url("../images/unsplash-james-connolly.jpg");
-  background-repeat:no-repeat;
-  background-size:cover;
-  background-attachment: fixed;
+  background-color: rgba(250, 250, 250, .95);
+  width: 100%;
 }
 
-.booking-bg {
+/* .booking-bg {
   background-image:url("../images/unsplash-james-connolly.jpg");
   background-repeat:no-repeat;
   background-size:cover;
@@ -45,7 +43,7 @@ body {
   background-repeat:no-repeat;
   background-size:cover;
   background-attachment: fixed;
-}
+} */
 /* END OF BACKGROUNDS */
 
 
@@ -120,9 +118,9 @@ nav a {
 
 
 .favorites {
-  background-color: #fff;
+  /* background-color: #fff; */
   float: left;
-  width: 25%;
+  width: 29%;
 }
 
 .favorite-card {
@@ -133,12 +131,11 @@ nav a {
 }
 
 .filters {
-  background-color:rgba(250, 250, 250, .95);
   width: 100%;
 }
 
 .listings {
-  background-color: #fff;
+  /* background-color: #fff; */
   float: left;
   width: 70%;
   /* padding: 10px; */

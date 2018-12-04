@@ -115,7 +115,7 @@ class Search extends Component {
             <option value="6">6</option>
             <option value="7">7</option>
             <option value="8+">8+</option>
-          </select>
+          </select></h4>
 
           <br />
 
@@ -147,7 +147,8 @@ class Search extends Component {
 
           <br />
 
-          <label>Lowest rating: </label><input type="number" name="low_rating" onChange={this.minRatingHandler}/> - <label>Highest rating: </label><input type="number" name="high_rating" onChange={this.maxRatingHandler}/>
+          <label>Lowest rating: </label><input type="number" name="low_rating" onChange={this.minRatingHandler}/>
+          <label>- Highest rating: </label><input type="number" name="high_rating" onChange={this.maxRatingHandler}/>
 
           <br />
 
