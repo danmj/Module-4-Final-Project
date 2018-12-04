@@ -14,7 +14,7 @@ class FavoritesContainer extends Component {
 
   render() {
     return(
-      <div class="favorites">
+      <div className="favorites">
         <h3>Favorites: </h3>
         {this.renderFavoritesCards()}
       </div>

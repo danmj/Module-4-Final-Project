@@ -7,9 +7,11 @@ import PageBody from './Containers/PageBody.js';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Nav />
-        <PageBody />
+      <div id="window">
+        <div className="App">
+          <Nav />
+          <PageBody />
+        </div>
       </div>
     );
   }

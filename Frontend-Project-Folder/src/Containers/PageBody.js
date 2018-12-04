@@ -3,6 +3,7 @@ import Search from '../Components/Search.js';
 import ResultsContainer from './ResultsContainer.js';
 import BookingContainer from './BookingContainer.js';
 import Login from '../Components/Login.js';
+import Confirmation from '../Components/Confirmation.js';
 // import listings from '../data.js';
 // import guests from '../data.js';
 // import cities from '../data.js';
@@ -21,10 +22,15 @@ class PageBody extends Component {
       tripEnd: "2018-12-05",
       guests: 1
     },
-    listingToBook: {}
+    listingToBook: {},
+    booked: {}
   }
 
   componentDidMount() {
+    this.fetchListings()
+  }
+
+  fetchListings = () => {
     fetch('http://localhost:3001/api/v1/listings')
       .then(resp => resp.json())
       .then(listingJson => {
@@ -37,6 +43,20 @@ class PageBody extends Component {
         })
       })
   }
+
+  // fetchGuests = () => {
+  //   fetch('http://localhost:3001/api/v1/users')
+  //     .then(resp => resp.json())
+  //     .then(listingJson => {
+  //       const listingsWithFavorited = listingJson.map(listing => {
+  //         return {...listing, favorited: false}
+  //       })
+  //
+  //       this.setState({
+  //         listingData: listingsWithFavorited
+  //       })
+  //     })
+  // }
 
   toggleFavorite = (listingObj) => {
     const updatedListings = this.state.listingData.map((listing) => {
@@ -57,9 +77,39 @@ class PageBody extends Component {
     })
   }
 
-  loggedIn = (name) => {
+  confirmBooking = (confirmedBooking) => {
     this.setState({
-      user: name,
+      booked: confirmedBooking,
+      display: "confirmation"
+    })
+    this.postBooking(confirmedBooking, this.state.listingToBook)
+  }
+
+  postBooking = (confirmedBooking, listingToBook) => {
+    console.log('posting');
+
+    fetch('http://localhost:3001/api/v1/bookings', {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+        },
+        body: JSON.stringify(
+          {
+            listing_id: listingToBook.id,
+            user_id: 1,
+            start_date: confirmedBooking.tripStart,
+            end_date: confirmedBooking.tripEnd,
+            guests: confirmedBooking.guests
+          })
+    })
+    .then(response => response.json())
+    .then(resp => console.log(resp))
+
+  }
+
+  loggedIn = (loginObj) => {
+    this.setState({
+      user: loginObj,
       display: "search"
     })
   }
@@ -84,7 +134,13 @@ class PageBody extends Component {
         handleBooking={this.handleBooking}
         searchObj={this.state.searchObject}/>
       case "booking":
-        return  <BookingContainer listing={this.state.listingToBook} searchObj={this.state.searchObject}/>
+        return  <BookingContainer listing={this.state.listingToBook}
+        confirmBooking={this.confirmBooking}
+        searchObj={this.state.searchObject}
+        display={this.state.display}/>
+      case "confirmation":
+        return  <Confirmation listing={this.state.listingToBook}
+        booked={this.state.booked} searchObj={this.state.searchObject}/>
       default:
         return <Login loggedIn={this.loggedIn}/>
     }

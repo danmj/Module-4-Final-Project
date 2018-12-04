@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 const FavoritesCard = (props) => {
 
@@ -11,14 +11,12 @@ const FavoritesCard = (props) => {
   }
 
   return(
-    <div>
-      <h3>{props.listing.title}</h3>
-      <p>{props.listing.host_name}</p>
-      <p>{props.listing.type}</p>
-      <p>{props.listing.max_guests}</p>
-      <p>{props.listing.price}</p>
-      <p>{props.listing.rating}</p>
-      <p>{props.listing.description}</p>
+
+    <div className="favorite-card">
+      <h3>{props.listing.name}</h3>
+      <p>Rating: {props.listing.average_rating}/5.0</p>
+      <p>Rate: ${props.listing.price}/night, Max: {props.listing.max_occupants} guests</p>
+      <p>Description: {props.listing.description}</p>
 
       <button onClick={handleFavorites}>{props.listing.favorited ? "Remove" : "Favorite"}</button>
       <button onClick={handleBooking}>Book This Place</button>

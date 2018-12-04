@@ -21,9 +21,7 @@ class BookingDetails extends Component {
 
   searchSubmitHandler = (e) => {
     e.preventDefault()
-
-    // POST to bookings table
-    // this.props.searchListings(this.state)
+    this.props.confirmBooking(this.state)
   }
 
 

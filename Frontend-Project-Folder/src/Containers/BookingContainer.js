@@ -6,8 +6,9 @@ class BookingContainer extends Component {
   render() {
     return(
       <div>
-      <ListingCard listing={this.props.listing} />
-      <BookingDetails listing={this.props.listing} searchObj={this.props.searchObj} />
+      <ListingCard listing={this.props.listing} display={this.props.display} />
+      <BookingDetails listing={this.props.listing} searchObj={this.props.searchObj} confirmBooking={this.props.confirmBooking}
+      />
       </div>
     )
   }
