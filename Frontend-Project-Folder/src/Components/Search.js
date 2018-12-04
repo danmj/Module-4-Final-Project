@@ -57,14 +57,19 @@ class Search extends Component {
     switch (e.target.value) {
       case "pet friendly":
         this.setState({ petClicked: !this.state.petClicked })
+        break;
       case "wifi":
         this.setState({ wifiClicked: !this.state.wifiClicked })
+        break;
       case "tv":
         this.setState({ tvClicked: !this.state.tvClicked })
+        break;
       case "pool":
         this.setState({ poolClicked: !this.state.poolClicked })
+        break;
       case "parking":
         this.setState({ parkingClicked: !this.state.parkingClicked })
+        break;
       case "kitchen":
         this.setState({ kitchenClicked: !this.state.kitchenClicked }, () => console.log(this.state.kitchenClicked))
     }
