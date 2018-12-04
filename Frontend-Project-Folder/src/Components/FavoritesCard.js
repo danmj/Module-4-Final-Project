@@ -8,19 +8,20 @@ const FavoritesCard = (props) => {
   }
 
   const handleBooking = () => {
-    props.handleBooking(props.listing)
+    props.handleBooking()
   }
 
   return(
-    <div className="favorite-card">
-    <h3>{props.listing.name}</h3>
-    <p>Rating: {props.listing.average_rating}/5.0</p>
-    <p>Rate: ${props.listing.price}/night, Max: {props.listing.max_occupants} guests</p>
-    <p>Description: {props.listing.description}</p>
 
-    <button onClick={handleFavorites}>{props.listing.favorited ? "Remove" : "Favorite"}</button>
-    <button onClick={handleBooking}>Book This Place</button>
-  </div>
+    <div className="favorite-card">
+      <h3>{props.listing.name}</h3>
+      <p>Rating: {props.listing.average_rating}/5.0</p>
+      <p>Rate: ${props.listing.price}/night, Max: {props.listing.max_occupants} guests</p>
+      <p>Description: {props.listing.description}</p>
+
+      <button onClick={handleFavorites}>{props.listing.favorited ? "Remove" : "Favorite"}</button>
+      <button onClick={handleBooking}>Book This Place</button>
+    </div>
   )
 }
 
