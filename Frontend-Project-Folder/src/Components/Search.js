@@ -55,6 +55,7 @@ class Search extends Component {
 
           <label htmlFor="guests_dropdown">Number of Guests:</label>
           <select name="guests" value={this.state.guests} onChange={this.guestChanger}>
+            <option value={null}>0</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -66,6 +67,32 @@ class Search extends Component {
             <option value="9">9</option>
             <option value="10">10</option>
           </select>
+
+          <br />
+
+          <label>Amenities: </label>
+          Pet Friendly<input type="checkbox" name="ammenity1" value="pet_friendly" />
+          |
+          WiFi<input type="checkbox" name="ammenity2" value="wifi" />
+          |
+          TV<input type="checkbox" name="ammenity3" value="tv" />
+          |
+          Pool<input type="checkbox" name="ammenity4" value="pool" />
+          |
+          Parking<input type="checkbox" name="ammenity5" value="parking" />
+          |
+          Kitchen<input type="checkbox" name="ammenity6" value="kitchen" />
+
+          <br />
+
+          <label htmlFor="type_dropdown">Shared or Private: </label>
+          <select name="type" onChange={this.typeChanger}>
+            <option value={null}>- Please make a selection -</option>
+            <option value="shared">Shared</option>
+            <option value="private">Private</option>
+          </select>
+
+          <br />
 
           <input type="submit" value="Submit" />
         </form>
