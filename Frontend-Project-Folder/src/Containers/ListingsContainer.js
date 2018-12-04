@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ListingCard from '../Components/ListingCard.js';
+import '../stylesheets/Results.css';
 
 class ListingsContainer extends Component {
 
