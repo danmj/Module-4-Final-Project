@@ -94,77 +94,77 @@ class Search extends Component {
   render() {
     return(
       <div className="search">
-      <h1>Search Listings</h1>
-        <form onSubmit={this.searchSubmitHandler}>
-          <h4><label htmlFor="city">Search by city:  </label>
-          <input type="text" name="city" value={this.state.city} onChange={this.cityChanger}/></h4>
+        <h1>Search Listings</h1>
+          <form onSubmit={this.searchSubmitHandler}>
+            <h4><label htmlFor="city">Search by city:  </label>
+            <input type="text" name="city" value={this.state.city} onChange={this.cityChanger}/></h4>
 
-          <h4><label htmlFor="start">Trip start date:  </label>
-          <input type="date"
-          id="start"
-          name="trip-start"
-          min="2018-01-01"
-          max="2018-12-31"
-          onChange={this.startChanger} /></h4>
+            <h4><label htmlFor="start">Trip start date:  </label>
+            <input type="date"
+            id="start"
+            name="trip-start"
+            min="2018-01-01"
+            max="2018-12-31"
+            onChange={this.startChanger} /></h4>
 
 
-          <h4><label htmlFor="end">Trip end date:  </label>
-          <input type="date"
-          id="end"
-          name="trip-end"
-          min="2018-01-01"
-          max="2018-12-31"
-          onChange={this.endChanger}/></h4>
+            <h4><label htmlFor="end">Trip end date:  </label>
+            <input type="date"
+            id="end"
+            name="trip-end"
+            min="2018-01-01"
+            max="2018-12-31"
+            onChange={this.endChanger}/></h4>
 
-          <h4><label htmlFor="guests_dropdown">Number of Guests:  </label>
-          <select name="guests" value={this.state.guests} onChange={this.guestChanger}>
-            <option value={null}>0</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8+">8+</option>
-          </select>
+            <h4><label htmlFor="guests_dropdown">Number of Guests:  </label>
+            <select name="guests" value={this.state.guests} onChange={this.guestChanger}>
+              <option value={null}>0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8+">8+</option>
+            </select></h4>
 
-          <br />
+            <br />
 
-          <label htmlFor="type_dropdown">Shared or Private: </label>
-          <select name="type" onChange={this.typeChanger}>
-            <option value={null}>- Please make a selection -</option>
-            <option value="shared">Shared</option>
-            <option value="private">Private</option>
-          </select>
+            <label htmlFor="type_dropdown">Shared or Private: </label>
+            <select name="type" onChange={this.typeChanger}>
+              <option value={null}>- Please make a selection -</option>
+              <option value="shared">Shared</option>
+              <option value="private">Private</option>
+            </select>
 
-          <br />
+            <br />
 
-          <div>
-            Amenities:
-            Pet Friendly<input type="checkbox" name="amenity" value="pet friendly" onChange={this.amenityHandler}/>
-            |
-            WiFi<input type="checkbox" name="amenity" value="wifi" onChange={this.amenityHandler}/>
-            |
-            TV<input type="checkbox" name="amenity" value="tv" onChange={this.amenityHandler}/>
-            |
-            Pool<input type="checkbox" name="amenity" value="pool" onChange={this.amenityHandler}/>
-            |
-            Parking<input type="checkbox" name="amenity" value="parking" onChange={this.amenityHandler}/>
-            |
-            Kitchen<input type="checkbox" name="amenity" value="kitchen" onChange={this.amenityHandler}/>
-          </div>
+            <div>
+              Amenities:
+              Pet Friendly<input type="checkbox" name="amenity" value="pet friendly" onChange={this.amenityHandler}/>
+              |
+              WiFi<input type="checkbox" name="amenity" value="wifi" onChange={this.amenityHandler}/>
+              |
+              TV<input type="checkbox" name="amenity" value="tv" onChange={this.amenityHandler}/>
+              |
+              Pool<input type="checkbox" name="amenity" value="pool" onChange={this.amenityHandler}/>
+              |
+              Parking<input type="checkbox" name="amenity" value="parking" onChange={this.amenityHandler}/>
+              |
+              Kitchen<input type="checkbox" name="amenity" value="kitchen" onChange={this.amenityHandler}/>
+            </div>
 
-          <label>Min price: </label><input type="number" name="min_price" onChange={this.minPriceHandler}/> - <label>Max price: </label><input type="number" name="max-price" onChange={this.maxPriceHandler}/>
+            <label>Min price: </label><input type="number" name="min_price" onChange={this.minPriceHandler}/> - <label>Max price: </label><input type="number" name="max-price" onChange={this.maxPriceHandler}/>
 
-          <br />
+            <br />
 
-          <label>Lowest rating: </label><input type="number" name="low_rating" onChange={this.minRatingHandler}/> - <label>Highest rating: </label><input type="number" name="high_rating" onChange={this.maxRatingHandler}/>
+            <label>Lowest rating: </label><input type="number" name="low_rating" onChange={this.minRatingHandler}/> - <label>Highest rating: </label><input type="number" name="high_rating" onChange={this.maxRatingHandler}/>
 
-          <br />
+            <br />
 
-          <input type="submit" value="Submit" />
-        </form>
+            <input type="submit" value="Submit" />
+          </form>
       </div>
     )
   }
