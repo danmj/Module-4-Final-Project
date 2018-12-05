@@ -18,7 +18,7 @@ const ListingCard = (props) => {
     <div className="listing-card">
       <h3>{props.listing.name}</h3>
       <p>Host: {props.listing.owner}</p>
-      <p>Rating: {props.listing.average_rating}/5.0 ({Math.floor(Math.random() * 100 + 1)} Ratings)</p>
+      <p>Rating: {props.listing.average_rating}/5.0</p>
       <p>Type: {props.listing.shared ? "Shared":"Private"}</p>
       <p>Rate: ${props.listing.price}/night, Max: {props.listing.max_occupants} guests</p>
 
