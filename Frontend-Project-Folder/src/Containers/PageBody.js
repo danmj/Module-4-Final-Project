@@ -45,6 +45,13 @@ class PageBody extends Component {
       })
   }
 
+
+  logoClickRender = () => {
+    if(this.props.logoClick === "results") {
+      this.setState({ display: "results" })
+    }
+  }
+
   // fetchGuests = () => {
   //   fetch('http://localhost:3001/api/v1/users')
   //     .then(resp => resp.json())
@@ -123,6 +130,7 @@ class PageBody extends Component {
   }
 
   renderPageBody = () => {
+
     switch (this.state.display) {
       case "login":
         return  <Login loggedIn={this.loggedIn}/>

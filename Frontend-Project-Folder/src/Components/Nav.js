@@ -31,19 +31,18 @@ export default class Nav extends Component {
   }
 
 
-
   render(){
     return(
       <div id="full-navigation">
-        <div id="nav-logo" class={this.state.logo} onMouseEnter={this.enterFunctionLogo} onMouseLeave={this.leaveFunctionLogo}>
+        <div id="nav-logo" class={this.state.logo} onMouseEnter={this.enterFunctionLogo} onMouseLeave={this.leaveFunctionLogo} onClick={this.props.logoHandler}>
           <img src={logo} alt="mockBnB Logo" />
         </div>
-        <div id="nav-bar-search" class={this.state.search} onMouseEnter={this.enterFunctionSearch} onMouseLeave={this.leaveFunctionSearch}>
+        <div id="nav-bar-search" class={this.state.search} onMouseEnter={this.enterFunctionSearch} onMouseLeave={this.leaveFunctionSearch} onClick={this.props.searchHandler}>
           <nav id="nav">
           <a>Search </a>
           </nav>
         </div>
-        <div id="nav-bar-account" class={this.state.account} onMouseEnter={this.enterFunctionAccount} onMouseLeave={this.leaveFunctionAccount}>
+        <div id="nav-bar-account" class={this.state.account} onMouseEnter={this.enterFunctionAccount} onMouseLeave={this.leaveFunctionAccount} onClick={this.props.accountHandler}>
           <nav id="nav">
           <a>Account</a>
           </nav>
