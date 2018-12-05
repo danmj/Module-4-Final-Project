@@ -5,8 +5,8 @@ class Search extends Component {
 
   state = {
     city: "New York",
-    tripStart: null,
-    tripEnd: null,
+    tripStart: '',
+    tripEnd: '',
     guests: 1,
     shared: false,
     minPrice: 1,
@@ -106,7 +106,7 @@ class Search extends Component {
           id="start"
           name="trip-start"
           min="2018-01-01"
-          max="2018-12-31"
+          max="2019-12-31"
           onChange={this.startChanger} /></h4>
 
 
@@ -115,7 +115,7 @@ class Search extends Component {
           id="end"
           name="trip-end"
           min="2018-01-01"
-          max="2018-12-31"
+          max="2019-12-31"
           onChange={this.endChanger}/></h4>
 
           <h4><label htmlFor="guests_dropdown">Number of Guests:  </label>
