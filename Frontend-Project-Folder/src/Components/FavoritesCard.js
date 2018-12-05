@@ -14,9 +14,10 @@ const FavoritesCard = (props) => {
 
     <div className="favorite-card">
       <h3>{props.listing.name}</h3>
+      <img src={props.listing.photos[0].url} height="100" width="200" />
       <p>Rating: {props.listing.average_rating}/5.0</p>
       <p>Rate: ${props.listing.price}/night, Max: {props.listing.max_occupants} guests</p>
-      <p>Description: {props.listing.description}</p>
+      <p>Description: {props.listing.description.slice(0, 100)}...</p>
 
       <button onClick={handleFavorites}>{props.listing.favorited ? "Remove" : "Favorite"}</button>
       <button onClick={handleBooking}>Book This Place</button>

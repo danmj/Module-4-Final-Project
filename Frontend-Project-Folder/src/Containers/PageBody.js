@@ -93,7 +93,6 @@ class PageBody extends Component {
       })
       .catch(error => console.log('error!!'))
     })
-
   }
 
   loggedIn = (loginObj) => {
