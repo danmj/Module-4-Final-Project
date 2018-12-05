@@ -53,13 +53,20 @@ nav {
   /* padding-bottom: 80px; */
 }
 
-div #nav-bar {
+div #nav-bar-search {
   position: absolute;
   top: 10px;
   right: 8%;
   height: 4px;
   margin-bottom: 100px;
-  background: black;
+}
+
+div #nav-bar-account {
+  position: absolute;
+  top: 10px;
+  right: 1%;
+  height: 4px;
+  margin-bottom: 100px;
 }
 
 div #nav-logo{
@@ -68,7 +75,10 @@ div #nav-logo{
   left: 8%;
   height: 4px;
   margin-bottom: 100px;
-  background: black;
+}
+
+.selected{
+  background: black
 }
 
 div #full-navigation{

@@ -5,15 +5,15 @@ import {Route, Link} from 'react-router-dom'
 class Search extends Component {
 
   state = {
-    city: "",
-    tripStart: "",
-    tripEnd: "",
-    guests: null,
-    type: "",
-    minPrice: null,
-    maxPrice: null,
-    minRating: null,
-    maxRating: null,
+    city: "New York",
+    tripStart: null,
+    tripEnd: null,
+    guests: 1,
+    shared: false,
+    minPrice: 1,
+    maxPrice: 1000000,
+    minRating: 1,
+    maxRating: 6,
     petClicked: false,
     wifiClicked: false,
     tvClicked: false,
@@ -45,7 +45,13 @@ class Search extends Component {
   }
 
   typeChanger = (e) => {
-    this.setState({ type: e.target.value })
+    if(e.target.value === "shared") {
+      this.setState({ shared: true })
+    }
+    else {
+      this.setState({ shared: false })
+    }
+
   }
 
   minPriceHandler = (e) => {
@@ -75,6 +81,7 @@ class Search extends Component {
         break;
       case "kitchen":
         this.setState({ kitchenClicked: !this.state.kitchenClicked }, () => console.log(this.state.kitchenClicked))
+        break;
     }
   }
 
