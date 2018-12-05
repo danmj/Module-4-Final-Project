@@ -3,6 +3,8 @@ import Search from '../Components/Search.js';
 import ResultsContainer from './ResultsContainer.js';
 import BookingContainer from './BookingContainer.js';
 import Login from '../Components/Login.js';
+import Nav from '../Components/Nav.js';
+import Account from '../Components/Account.js'
 import Confirmation from '../Components/Confirmation.js';
 import {Route, Link, BrowserRouter as Router, Redirect} from 'react-router-dom'
 
@@ -110,13 +112,18 @@ class PageBody extends Component {
     })
   }
 
+  updateDisplay = (newDisplay) => {
+    console.log('new display', newDisplay);
+    this.setState({ display: newDisplay })
+  }
+
   renderPageBody = () => {
     console.log(this.state.display);
+
     switch (this.state.display) {
       case "login":
         return  <Redirect to="/login"/>
       case "search":
-
         return <Redirect to="/search"/>
       case "results":
         return <Redirect to="/results"/>
@@ -124,6 +131,8 @@ class PageBody extends Component {
         return <Redirect to="/booking"/>
       case "confirmation":
         return <Redirect to="/confirmation"/>
+      case "account":
+        return <Redirect to="/account"/>
       default:
         return <Redirect to="/login"/>
     }
@@ -132,6 +141,7 @@ class PageBody extends Component {
   render() {
     return(
       <div>
+      <Nav updateDisplay={this.updateDisplay}/>
       <Route path="/login" render={(props)=><Login {...props} loggedIn={this.loggedIn}/>}/>
 
       <Route path="/search" render={(props)=><Search {...props} searchListings={this.searchListings} />}/>
@@ -149,6 +159,9 @@ class PageBody extends Component {
 
       <Route path="/confirmation" render={(props)=><Confirmation listing={this.state.listingToBook}
       booked={this.state.booked} searchObj={this.state.searchObject}/>}/>
+
+      <Route path="/account" render={(props)=><Account user={this.state.user}/>}/>
+
       {this.renderPageBody()}
 
       </div>
