@@ -20,6 +20,8 @@ const FavoritesCard = (props) => {
 
       <button onClick={handleFavorites}>{props.listing.favorited ? "Remove" : "Favorite"}</button>
       <button onClick={handleBooking}>Book This Place</button>
+
+      <hr />
     </div>
   )
 }

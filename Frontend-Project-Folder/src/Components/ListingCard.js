@@ -17,7 +17,11 @@ const ListingCard = (props) => {
   return(
     <div className="listing-card">
       <h3>{props.listing.name}</h3>
-      <p>Host: {props.listing.owner}</p>
+
+      <img src={props.listing.photos[0].url} height="150" width="280" />
+
+      <p>Host: {props.listing.owner}</p>'
+
       <p>Rating: {props.listing.average_rating}/5.0</p>
       <p>Type: {props.listing.shared ? "Shared":"Private"}</p>
       <p>Rate: ${props.listing.price}/night, Max: {props.listing.max_occupants} guests</p>
@@ -36,6 +40,7 @@ const ListingCard = (props) => {
         <button onClick={handleFavorites}>{props.listing.favorited ? "Remove" : "Favorite"}</button>
         <button onClick={handleBooking}>Book This Place</button>
       </div>
+      <hr id="horizontal-line" />
     </div>
   )
 }
