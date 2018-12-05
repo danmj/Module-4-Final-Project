@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
-import '../stylesheets/Results.css';
 import Filters from '../Components/Filters.js';
 import ListingsContainer from './ListingsContainer.js';
 import FavoritesContainer from './FavoritesContainer.js';
 
 class ResultsContainer extends Component {
+  componentDidMount() {
+    document.body.style.backgroundImage = "url()"
+    document.body.style.backgroundColor = "rgb(47, 109, 118, .25)"
+  }
 
   render() {
     return(
 
-      <div className="results-bg">
+      <div id="results-bg" >
           <Filters />
           <ListingsContainer listingData={this.props.listingData} guestsData={this.props.guestsData} citiesData={this.props.citiesData} searchObject={this.props.searchObject} toggleFavorite={this.props.toggleFavorite} handleBooking={this.props.handleBooking} />
 

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import FavoritesCard from '../Components/FavoritesCard.js';
-import '../stylesheets/Results.css';
 
 class FavoritesContainer extends Component {
 

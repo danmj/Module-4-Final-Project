@@ -119,23 +119,7 @@ class PageBody extends Component {
 
   renderPageBody = () => {
     console.log(this.state.display);
-
-    switch (this.state.display) {
-      case "login":
-        return  <Redirect to="/login"/>
-      case "search":
-        return <Redirect to="/search"/>
-      case "results":
-        return <Redirect to="/results"/>
-      case "booking":
-        return <Redirect to="/booking"/>
-      case "confirmation":
-        return <Redirect to="/confirmation"/>
-      case "account":
-        return <Redirect to="/account"/>
-      default:
-        return <Redirect to="/login"/>
-    }
+    return  <Redirect to={"/" + this.state.display}/>
   }
 
   render() {
@@ -170,10 +154,3 @@ class PageBody extends Component {
 }
 
 export default PageBody
-
-// <Route path="/login" render={(props)=><Login {...props} loggedIn={this.loggedIn}/>}/>
-// <Route path="/search" render={(props)=><Search {...props} searchListings={this.searchListings} />}/>
-
-//
-// {this.state.display === "login" ? <Route path="/login" render={(props)=><Login {...props} loggedIn={this.loggedIn}/>}/> : null}
-// {this.state.display === "search" ? <Route path="/search" render={(props)=><Search {...props} searchListings={this.searchListings} />}/> : null}

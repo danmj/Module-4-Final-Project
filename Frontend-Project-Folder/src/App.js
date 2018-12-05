@@ -13,11 +13,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div id="window">
+        <div id="app-window">
           <div className="App">
-            <Nav />
-            <PageBody />
 
+            <PageBody />
           </div>
         </div>
       </Router>

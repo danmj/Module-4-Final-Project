@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import '../stylesheets/Search.css';
 import {Route, Link} from 'react-router-dom'
 
 class Search extends Component {
@@ -132,20 +131,16 @@ class Search extends Component {
             <option value="8+">8+</option>
           </select></h4>
 
-          <br />
-
-          <label htmlFor="type_dropdown">Shared or Private: </label>
+          <h4><label htmlFor="type_dropdown">Shared or Private: </label>
           <select name="type" onChange={this.typeChanger}>
             <option value={null}>- Please make a selection -</option>
             <option value="shared">Shared</option>
             <option value="private">Private</option>
-          </select>
-
-          <br />
+          </select></h4>
 
           <div>
-            Amenities:
-            Pet Friendly<input type="checkbox" name="amenity" value="pet friendly" onChange={this.amenityHandler}/>
+            <h4>Amenities:</h4>
+            <p>Pet Friendly<input type="checkbox" name="amenity" value="pet friendly" onChange={this.amenityHandler}/>
             |
             WiFi<input type="checkbox" name="amenity" value="wifi" onChange={this.amenityHandler}/>
             |
@@ -156,16 +151,14 @@ class Search extends Component {
             Parking<input type="checkbox" name="amenity" value="parking" onChange={this.amenityHandler}/>
             |
             Kitchen<input type="checkbox" name="amenity" value="kitchen" onChange={this.amenityHandler}/>
-          </div>
+          </p></div>
 
-          <label>Min price: </label><input type="number" name="min_price" onChange={this.minPriceHandler}/> - <label>Max price: </label><input type="number" name="max-price" onChange={this.maxPriceHandler}/>
+          <label><h4>Price:</h4></label>
+          <p>Min: <input type="number" name="min_price" onChange={this.minPriceHandler}/> - <label> Max: </label><input type="number" name="max-price" onChange={this.maxPriceHandler}/></p>
 
-          <br />
-
-          <label>Lowest rating: </label><input type="number" name="low_rating" onChange={this.minRatingHandler}/>
-          <label>- Highest rating: </label><input type="number" name="high_rating" onChange={this.maxRatingHandler}/>
-
-          <br />
+          <label><h4>Rating:</h4></label>
+          <p>Lowest:  <input type="number" name="low_rating" onChange={this.minRatingHandler}/>
+          <label>-  Highest rating: </label><input type="number" name="high_rating" onChange={this.maxRatingHandler}/></p>
 
           <input type="submit" value="Submit" />
         </form>
