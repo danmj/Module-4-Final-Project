@@ -20,7 +20,7 @@ const ListingCard = (props) => {
 
       <img src={props.listing.photos[0].url} height="150" width="280" />
 
-      <p>Host: {props.listing.owner}</p>'
+      <p>Host: {props.listing.owner}</p>
 
       <p>Rating: {props.listing.average_rating}/5.0</p>
       <p>Type: {props.listing.shared ? "Shared":"Private"}</p>
