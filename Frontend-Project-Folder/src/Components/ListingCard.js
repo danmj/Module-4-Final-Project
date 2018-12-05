@@ -32,7 +32,7 @@ const ListingCard = (props) => {
         <li>Pool: {props.listing.ammenities.pool ? "yes" : "no"}</li>
         <li>Parking: {props.listing.ammenities.parking ? "yes" : "no"}</li>
       </ul>
-      <div hidden={display === "booking"? true: false }>
+      <div hidden={display === "booking" ? true: false }>
         <button onClick={handleFavorites}>{props.listing.favorited ? "Remove" : "Favorite"}</button>
         <button onClick={handleBooking}>Book This Place</button>
       </div>

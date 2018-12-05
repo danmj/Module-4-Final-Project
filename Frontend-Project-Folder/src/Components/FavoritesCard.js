@@ -7,7 +7,7 @@ const FavoritesCard = (props) => {
   }
 
   const handleBooking = () => {
-    props.handleBooking()
+    props.handleBooking(props.listing)
   }
 
   return(

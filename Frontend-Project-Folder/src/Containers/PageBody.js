@@ -65,10 +65,7 @@ class PageBody extends Component {
   }
 
   confirmBooking = (confirmedBooking) => {
-    this.setState({
-      booked: confirmedBooking,
-      display: "confirmation"
-    })
+    // debugger
     this.postBooking(confirmedBooking, this.state.listingToBook)
   }
 
@@ -89,8 +86,13 @@ class PageBody extends Component {
             guests: confirmedBooking.guests
           })
     })
-    .then(response => response.json())
-    .then(resp => console.log(resp))
+    .then(response => {
+      this.setState({
+        booked: confirmedBooking,
+        display: "confirmation"
+      })
+      .catch(error => console.log('error!!'))
+    })
 
   }
 
@@ -144,7 +146,7 @@ class PageBody extends Component {
       <Route path="/confirmation" render={(props)=><Confirmation listing={this.state.listingToBook}
       booked={this.state.booked} searchObj={this.state.searchObject}/>}/>
 
-      <Route path="/account" render={(props)=><Account user={this.state.user}/>}/>
+      <Route path="/account" render={(props)=><Account user={this.state.user} listingData={this.state.listingData}/>} display={this.state.display}/>
 
       {this.renderPageBody()}
 
