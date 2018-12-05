@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import '../stylesheets/Search.css';
+import {Route, Link} from 'react-router-dom'
 
 class Search extends Component {
 
@@ -18,8 +19,9 @@ class Search extends Component {
     tvClicked: false,
     poolClicked: false,
     parkingClicked: false,
-    kitchenClicked: false,
+    kitchenClicked: false
   }
+
 
   searchSubmitHandler = (e) => {
     e.preventDefault()
@@ -85,6 +87,7 @@ class Search extends Component {
   }
 
   render() {
+    console.log('got to the search render');
     return(
       <div className="search">
       <h1>Search Listings</h1>

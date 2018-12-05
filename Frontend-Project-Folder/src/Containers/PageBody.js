@@ -4,9 +4,8 @@ import ResultsContainer from './ResultsContainer.js';
 import BookingContainer from './BookingContainer.js';
 import Login from '../Components/Login.js';
 import Confirmation from '../Components/Confirmation.js';
-// import listings from '../data.js';
-// import guests from '../data.js';
-// import cities from '../data.js';
+import {Route, Link, BrowserRouter as Router, Redirect} from 'react-router-dom'
+
 
 class PageBody extends Component {
 
@@ -28,7 +27,6 @@ class PageBody extends Component {
 
   componentDidMount() {
     this.fetchListings()
-    document.body.style.backgroundColor = '#fff'
   }
 
   fetchListings = () => {
@@ -44,20 +42,6 @@ class PageBody extends Component {
         })
       })
   }
-
-  // fetchGuests = () => {
-  //   fetch('http://localhost:3001/api/v1/users')
-  //     .then(resp => resp.json())
-  //     .then(listingJson => {
-  //       const listingsWithFavorited = listingJson.map(listing => {
-  //         return {...listing, favorited: false}
-  //       })
-  //
-  //       this.setState({
-  //         listingData: listingsWithFavorited
-  //       })
-  //     })
-  // }
 
   toggleFavorite = (listingObj) => {
     const updatedListings = this.state.listingData.map((listing) => {
@@ -109,10 +93,14 @@ class PageBody extends Component {
   }
 
   loggedIn = (loginObj) => {
+    // debugger
+    console.log(loginObj);
+    // window.history.pushState({}, '', 'search')
     this.setState({
       user: loginObj,
       display: "search"
     })
+
   }
 
   searchListings = (searchObj) => {
@@ -123,37 +111,56 @@ class PageBody extends Component {
   }
 
   renderPageBody = () => {
+    console.log(this.state.display);
     switch (this.state.display) {
       case "login":
-        return  <Login loggedIn={this.loggedIn}/>
+        return  <Redirect to="/login"/>
       case "search":
-        return <Search searchListings={this.searchListings} />
+
+        return <Redirect to="/search"/>
       case "results":
-        return  <ResultsContainer listingData={this.state.listingData} guestsData={this.state.guestsData} citiesData={this.state.citiesData}
-        searchObject={this.state.searchObject}
-        toggleFavorite={this.toggleFavorite}
-        handleBooking={this.handleBooking}
-        searchObj={this.state.searchObject}/>
+        return <Redirect to="/results"/>
       case "booking":
-        return  <BookingContainer listing={this.state.listingToBook}
-        confirmBooking={this.confirmBooking}
-        searchObj={this.state.searchObject}
-        display={this.state.display}/>
+        return <Redirect to="/booking"/>
       case "confirmation":
-        return  <div className="confirmation-bg"><Confirmation listing={this.state.listingToBook}
-        booked={this.state.booked} searchObj={this.state.searchObject}/> </div>
+        return <Redirect to="/confirmation"/>
       default:
-        return <Login loggedIn={this.loggedIn}/>
+        return <Redirect to="/login"/>
     }
   }
 
   render() {
     return(
       <div>
-        {this.renderPageBody()}
+      <Route path="/login" render={(props)=><Login {...props} loggedIn={this.loggedIn}/>}/>
+
+      <Route path="/search" render={(props)=><Search {...props} searchListings={this.searchListings} />}/>
+
+      <Route path="/results" render={(props)=><ResultsContainer listingData={this.state.listingData} guestsData={this.state.guestsData} citiesData={this.state.citiesData}
+      searchObject={this.state.searchObject}
+      toggleFavorite={this.toggleFavorite}
+      handleBooking={this.handleBooking}
+      searchObj={this.state.searchObject}/>}/>
+
+      <Route path="/booking" render={(props)=><BookingContainer listing={this.state.listingToBook}
+      confirmBooking={this.confirmBooking}
+      searchObj={this.state.searchObject}
+      display={this.state.display}/>}/>
+
+      <Route path="/confirmation" render={(props)=><Confirmation listing={this.state.listingToBook}
+      booked={this.state.booked} searchObj={this.state.searchObject}/>}/>
+      {this.renderPageBody()}
+
       </div>
     )
   }
 }
 
 export default PageBody
+
+// <Route path="/login" render={(props)=><Login {...props} loggedIn={this.loggedIn}/>}/>
+// <Route path="/search" render={(props)=><Search {...props} searchListings={this.searchListings} />}/>
+
+//
+// {this.state.display === "login" ? <Route path="/login" render={(props)=><Login {...props} loggedIn={this.loggedIn}/>}/> : null}
+// {this.state.display === "search" ? <Route path="/search" render={(props)=><Search {...props} searchListings={this.searchListings} />}/> : null}

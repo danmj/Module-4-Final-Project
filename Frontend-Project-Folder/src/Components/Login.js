@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
 import backgrounds from '../images/images.js'
+import {Route, Link} from 'react-router-dom'
 
 export default class Login extends Component {
 
@@ -18,11 +19,12 @@ export default class Login extends Component {
   }
 
   emailChangeHandler = (e) => {
-    this.setState({ name: e.target.value })
+    this.setState({ email: e.target.value })
   }
 
   loginSubmitHandler = (e) => {
     e.preventDefault()
+    // window.history.pushState({}, '', 'search')
     this.props.loggedIn(this.state)
   }
 
@@ -43,7 +45,7 @@ export default class Login extends Component {
 
           <h4><label>Last Name:  </label>
           <input name="last-name" value={this.state.lastName} onChange={this.lastChangeHandler} /></h4>
-          
+
           <h4><label>Email:  </label>
           <input name="email" value={this.state.email} onChange={this.emailChangeHandler} /></h4>
           <input type="submit" value="Submit" />
@@ -52,3 +54,10 @@ export default class Login extends Component {
     )
   }
 }
+
+
+// <Link to={{
+//   pathname: "/search" ,
+//   state: this.state,
+  // loggedIn: this.props.loggedIn }}>
+// </Link>
