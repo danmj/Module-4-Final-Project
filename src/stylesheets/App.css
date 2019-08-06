@@ -102,7 +102,7 @@ nav a {
   margin-top: 2%;
   border-radius: 3%;
   padding: 2%;
-  height: 100vh;
+  min-height: 1000px;
 }
 
 .favorite-card {
@@ -208,4 +208,10 @@ nav a {
   /* margin: 10px;
   border-width: 5px; */
   border-color: black;
+}
+
+.sticky {
+    position: fixed;
+    position: sticky;
+    top: 0;
 }

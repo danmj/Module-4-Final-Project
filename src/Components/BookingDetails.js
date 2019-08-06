@@ -35,7 +35,7 @@ class BookingDetails extends Component {
           id="start"
           name="trip-start"
           min="2018-01-01"
-          max="2018-12-31"
+          max="2019-12-31"
           value={this.state.tripStart}
           onChange={this.startChanger} /><br/>
 
@@ -44,7 +44,7 @@ class BookingDetails extends Component {
           id="end"
           name="trip-end"
           min="2018-01-01"
-          max="2018-12-31"
+          max="2019-12-31"
           value={this.state.tripEnd}
           onChange={this.endChanger}/><br/>
 

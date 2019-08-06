@@ -32,7 +32,7 @@ class PageBody extends Component {
   }
 
   fetchListings = () => {
-    fetch('http://localhost:3001/api/v1/listings')
+    fetch('http://localhost:3001/api/v1/listings/')
       .then(resp => resp.json())
       .then(listingJson => {
         const listingsWithFavorited = listingJson.map(listing => {
@@ -91,7 +91,7 @@ class PageBody extends Component {
         booked: confirmedBooking,
         display: "confirmation"
       })
-      .catch(error => console.log('error!!'))
+
     })
   }
 
