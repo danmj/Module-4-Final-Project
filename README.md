@@ -25,7 +25,7 @@ Listings page with favorited sidebar
 
 ## Technology and Frameworks
 
-Uses the React.js framework for the frontend and a Ruby on Rails backend.
+Uses the React.js framework.
 
 ## Credits
 
