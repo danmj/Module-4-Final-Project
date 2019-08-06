@@ -8,9 +8,9 @@ There is a backend database that serves this site that can be found in the repos
 
 To access to the full features of this site, please complete the following three steps:
 
-1. Host the back-end server (found at https://github.com/danmj/MockBNB-backend/tree/master/Backend-Project-Folder) on localhost:3001
-2. CD into https://github.com/danmj/MockBNB-frontend/tree/master/Frontend-Project-Folder
-3. Start-up the frontend development server using npm start
+1. Host the [back-end server](https://github.com/danmj/MockBNB-backend) on localhost:3001
+2. CD into this repository
+3. Start-up the frontend development server using ```npm start```
 
 ## Screenshots
 
